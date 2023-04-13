@@ -39,11 +39,14 @@ export const LoginComponent = () => {
       return;
     }
     axios
-      .post("http://localhost:3005/api/user/register", {
-        name: userInputSignup.name,
-        email: userInputSignup.email,
-        password: userInputSignup.password,
-      })
+      .post(
+        "https://devedauthapi-be-production.up.railway.app/api/user/register",
+        {
+          name: userInputSignup.name,
+          email: userInputSignup.email,
+          password: userInputSignup.password,
+        }
+      )
       .then((res) => {
         console.log("RES :", res.data);
       })
@@ -62,10 +65,13 @@ export const LoginComponent = () => {
       return;
     }
     axios
-      .post("http://localhost:3005/api/user/login", {
-        email: userInputSignIn.email,
-        password: userInputSignIn.password,
-      })
+      .post(
+        "https://devedauthapi-be-production.up.railway.app/api/user/login",
+        {
+          email: userInputSignIn.email,
+          password: userInputSignIn.password,
+        }
+      )
       .then((res) => {
         console.log(res);
       });
